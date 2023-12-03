@@ -1,0 +1,109 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "checked": false,
+      "name": "Milk"
+    },
+    {
+      "checked": false,
+      "id": 2,
+      "name": "Eggs"
+    },
+    {
+      "id": 3,
+      "checked": false,
+      "name": "Bread"
+    },
+    {
+      "id": 4,
+      "checked": false,
+      "name": "Butter"
+    },
+    {
+      "id": 5,
+      "checked": false,
+      "name": "Cheese"
+    },
+    {
+      "id": 6,
+      "checked": false,
+      "name": "Bacon"
+    },
+    {
+      "id": 7,
+      "checked": false,
+      "name": "Sausage"
+    },
+    {
+      "id": 8,
+      "checked": false,
+      "name": "Ham"
+    },
+    {
+      "id": 9,
+      "checked": false,
+      "name": "Chicken"
+    },
+    {
+      "id": 10,
+      "checked": false,
+      "name": "Beef"
+    },
+    {
+      "id": 11,
+      "checked": false,
+      "name": "Pork"
+    },
+    {
+      "id": 12,
+      "checked": false,
+      "name": "Fish"
+    },
+    {
+      "id": 13,
+      "checked": false,
+      "name": "Shrimp"
+    },
+    {
+      "id": 14,
+      "checked": false,
+      "name": "Crab"
+    },
+    {
+      "id": 15,
+      "checked": false,
+      "name": "Lobster"
+    },
+    {
+      "id": 16,
+      "checked": false,
+      "name": "Oysters"
+    },
+    {
+      "id": 17,
+      "checked": false,
+      "name": "Clams"
+    },
+    {
+      "id": 18,
+      "checked": false,
+      "name": "Scallops"
+    },
+    {
+      "id": 19,
+      "checked": false,
+      "name": "Mussels"
+    },
+    {
+      "id": 20,
+      "checked": false,
+      "name": "Crackers"
+    },
+    {
+      "id": 21,
+      "checked": false,
+      "name": "Chips"
+    }
+  ]
+}

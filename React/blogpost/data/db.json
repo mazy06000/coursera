@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "My first post",
+      "body": "This is the body of my first post",
+      "datetime": "2021-09-01 12:00:00"
+    },
+    {
+      "id": 2,
+      "title": "My second post",
+      "body": "This is the body of my second post",
+      "datetime": "2021-09-02 12:00:00"
+    },
+    {
+      "id": 3,
+      "title": "My third post",
+      "body": "This is the body of my third post",
+      "datetime": "2021-09-03 12:00:00"
+    },
+    {
+      "id": 4,
+      "title": "My fourth post",
+      "body": "This is the body of my fourth post",
+      "datetime": "2021-09-04 12:00:00"
+    },
+    {
+      "id": 5,
+      "title": "My fifth post",
+      "body": "This is the body of my fifth post",
+      "datetime": "2021-09-05 12:00:00"
+    },
+    {
+      "id": 6,
+      "title": "My sixth post",
+      "body": "This is the body of my sixth post",
+      "datetime": "2021-09-06 12:00:00"
+    },
+    {
+      "id": 7,
+      "title": "My seventh post",
+      "body": "This is the body of my seventh post",
+      "datetime": "2021-09-07 12:00:00"
+    },
+    {
+      "id": 8,
+      "title": "My eighth post",
+      "body": "This is the body of my eighth post",
+      "datetime": "2021-09-08 12:00:00"
+    },
+    {
+      "id": 9,
+      "title": "My ninth post",
+      "body": "This is the body of my ninth post",
+      "datetime": "2021-09-09 12:00:00"
+    },
+    {
+      "id": 10,
+      "title": "My tenth post",
+      "body": "This is the body of my tenth post...",
+      "datetime": "03/12/2023, 22:46:24"
+    }
+  ]
+}
