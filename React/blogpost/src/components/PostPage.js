@@ -1,9 +1,18 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useStoreActions, useStoreState } from "easy-peasy";
 
-const PostPage = ({ posts, handleDelete }) => {
+const PostPage = () => {
   const { id } = useParams();
-  const post = posts.find((post) => post.id === Number(id));
+  const navigate = useNavigate();
+  const deletePost = useStoreActions((actions) => actions.deletePost);
+  const getPostById = useStoreState((state) => state.getPostById);
+  const post = getPostById(id);
+
+  const handleDelete = (id) => {
+    deletePost(id);
+    navigate("/");
+  };
 
   return (
     <main className="PostPage">
@@ -13,8 +22,15 @@ const PostPage = ({ posts, handleDelete }) => {
             <h2>{post.title}</h2>
             <p className="postDate">{post.datetime}</p>
             <p className="postBody">{post.body}</p>
-            <Link to={`/edit/${post.id}`}><button className="editButton">Edit Post</button> </Link>
-            <button className="deleteButton" onClick={() => handleDelete(post.id)}>Delete</button>
+            <Link to={`/edit/${post.id}`}>
+              <button className="editButton">Edit Post</button>{" "}
+            </Link>
+            <button
+              className="deleteButton"
+              onClick={() => handleDelete(post.id)}
+            >
+              Delete
+            </button>
           </>
         )}
         {!post && (

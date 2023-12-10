@@ -1,0 +1,18 @@
+{
+  "mohamed": {
+    "username": "mohamed",
+    "email": null,
+    "full_name": null,
+    "disabled": null,
+    "roles": ["admin", "user", "editor"],
+    "hashed_password": "$2b$12$cJ4NGhLyYEwE06K.LOGyyuPR3eK7RfWJFvTbgoAsEXlnEtQ9kUC9i"
+  },
+  "yasmine": {
+    "username": "yasmine",
+    "email": null,
+    "full_name": null,
+    "disabled": null,
+    "roles": ["user"],
+    "hashed_password": "$2b$12$w1dVNMc/fG88kPH2A2tfmufr.GlfcJU8Ck6BdO12tdUEjxp1Z596u"
+  }
+}

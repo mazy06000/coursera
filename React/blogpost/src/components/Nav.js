@@ -1,6 +1,22 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useStoreState, useStoreActions } from 'easy-peasy'
 
-const Nav = ({ search, setSearch }) => {
+const Nav = () => {
+    const posts = useStoreState(state => state.posts)
+    const search = useStoreState(state => state.search)
+    const setSearch = useStoreActions(actions => actions.setSearch)
+    const setSearchResults = useStoreActions(actions => actions.setSearchResults)
+    
+    useEffect(() => {
+        const results = posts.filter(
+          (post) =>
+            post.title.toLowerCase().includes(search) ||
+            post.body.toLowerCase().includes(search)
+        );
+        setSearchResults(results.reverse());
+      }, [search, posts, setSearchResults]);
+      
     return (
         <nav className="Nav">
             <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
