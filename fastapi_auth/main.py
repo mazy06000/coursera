@@ -24,11 +24,9 @@ class Signup(BaseModel):
 class LoginToken(BaseModel):
     access_token: str
     token_type: str
-    roles: List[Literal['user', 'editor', 'admin']]
 
 class RefreshToken(BaseModel):
     access_token: str
-    roles: List[Literal['user', 'editor', 'admin']]
 
 class TokenData(BaseModel):
     username: Optional[str] = None
@@ -134,7 +132,7 @@ async def signin(form_data: OAuth2PasswordRequestForm = Depends(), response: Res
         )
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        data={"sub": user.username}, expires_delta=access_token_expires
+        data={"sub": user.username, "roles": user.roles}, expires_delta=access_token_expires
     )
     refresh_token_expires = timedelta(minutes=REFRESH_TOKEN_EXPIRE_MINUTES)
     refresh_token = create_access_token(
@@ -151,7 +149,7 @@ async def signin(form_data: OAuth2PasswordRequestForm = Depends(), response: Res
         samesite='Lax'   # Helps with CSRF protection
     )
 
-    return {"access_token": access_token, "token_type": "bearer", "roles": user.roles}
+    return {"access_token": access_token, "token_type": "bearer"}
 
 
 def get_user_from_token(token: str):
@@ -204,9 +202,9 @@ async def get_users(current_user: User = Depends(get_current_user)):
 async def refresh_token(current_user: User = Depends(get_current_user)):
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        data={"sub": current_user.username}, expires_delta=access_token_expires
+        data={"sub": current_user.username, "roles": current_user.roles}, expires_delta=access_token_expires
     )
-    return {"access_token": access_token, "roles": current_user.roles}
+    return {"access_token": access_token}
 
 
 @app.post("/logout")

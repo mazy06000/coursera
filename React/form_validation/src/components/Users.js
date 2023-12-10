@@ -16,8 +16,9 @@ const Users = () => {
     const getUsers = async () => {
       try {
         const res = await axiosPrivate.get("/users", { signal: controller.signal });
+        const usernames = res?.data?.map((user) => user?.username);
         console.log(res.data);
-        isMounted && setUsers(res?.data);
+        isMounted && setUsers(usernames);
       } catch (err) {
         if (axios.isCancel(err)) {
           console.log('Request canceled', err.message);
@@ -42,7 +43,7 @@ const Users = () => {
       {users?.length ? (
         <ul>
           {users.map((user, i) => (
-            <li key={i}>{user?.username}</li>
+            <li key={i}>{user}</li>
           ))}
         </ul>
       ) : (
