@@ -21,6 +21,10 @@ class Signup(BaseModel):
     username: str
     password: str
 
+class SignIn(BaseModel):
+    username: str
+    password: str
+
 class LoginToken(BaseModel):
     access_token: str
     token_type: str
@@ -121,7 +125,7 @@ async def signup(signup: Signup):
     return {"message": "User created successfully"}
 
 @app.post("/signin", response_model=LoginToken)
-async def signin(form_data: OAuth2PasswordRequestForm = Depends(), response: Response = None):
+async def signin(form_data: SignIn, response: Response = None):
     
     user = authenticate_user(form_data.username, form_data.password)
     if not user:
