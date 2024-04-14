@@ -1,2 +1,6 @@
 pdfs/*.png
 *.pdf
+*.csv
+*.pkl
+*.xlsx
+*.pth
